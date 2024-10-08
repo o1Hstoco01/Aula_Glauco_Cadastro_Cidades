@@ -1,3 +1,18 @@
 {
-
+    "cidades": [
+        {
+            "CEP":15000,
+            "Nome":"Cidade",
+            "Estado": "SP",
+            "Ddd":185030.00,
+            "Populacao": 30000
+        },
+        {
+            "CEP":15000,
+            "Nome":"Cidade",
+            "Estado": "SP",
+            "Ddd":185030.00,
+            "Populacao": 30000
+        }
+    ]
 }
