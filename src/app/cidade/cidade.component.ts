@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cidade } from '../cidade';
 import { CidadeService } from '../cidade.service';
+import { Cidade } from '../cidade';
 
 
 @Component({
@@ -8,6 +8,7 @@ import { CidadeService } from '../cidade.service';
   templateUrl: './cidade.component.html',
   styleUrl: './cidade.component.css'
 })
+
 export class CidadeComponent implements OnInit{
   cidades: Cidade  [] = [];
 
@@ -20,7 +21,15 @@ export class CidadeComponent implements OnInit{
   loadCidades(){
     this.servise.getCidades().subscribe({
       next: data => this.cidades = data
-    });
+    })
   }
+
+  delete(cidades: Cidade){
+    this.servise.delete(cidades).subscribe({
+       next:() => this.loadCidades
+   })
+  }
+
+
 
 }
