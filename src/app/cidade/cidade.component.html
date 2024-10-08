@@ -1,15 +1,23 @@
+<div class="container">
+	<h1 style="text-align: center;">Cadastro de Cidades</h1>
+  
 <table class="table table-striped table-dark">
 	<thead>
 		<tr>
-			<th scope="col">ID</th>
+			<th scope="col">CEP</th>
 			<th scope="col">Nome</th>
-			<th scope="col">Area</th>
-			<th scope="col">População</th>
+			<th scope="col">Estado</th>
+			<th scope="col">Ddd</th>
+			<th scope="col">Populacao</th>
 		</tr>
 	</thead>
 	<tbody>
-    <tr>
-
-    </tr>
+		<tr *ngFor="let cidade of cidades">
+			<th scope="row">{{cidade.CEP}}</th>
+			<td>{{cidade.Nome}}</td>
+			<td>{{cidade.Estado}}</td>
+			<td>{{cidade.Ddd}}</td>
+			<td>{{cidade.Populacao}}</td>
 	</tbody>
 </table>
+</div>
