@@ -17,13 +17,13 @@
 			<tr *ngFor="let cidade of cidades">
 				<th scope="row">{{cidade.id}}</th>
 				<td>{{cidade.cep}}</td>
-				<td>{{cidade.nome}}</td>
+				<td><a [routerLink]="['/cidade',cidade.id]"></a>{{cidade.nome}}</td>
 				<td>{{cidade.estado}}</td>
 				<td>{{cidade.ddd}}</td>
 				<td>{{cidade.populacao}}</td>
-				<td><button class="btn btn-danger" (click)="delete(cidade)">Remover</button></td>
-			</tr>	
+				<td><button class="btn btn-danger"(click)="delete(cidade)">Remover</button></td>
+			</tr>
 		</tbody>
 	</table>
-	
+
 </div>

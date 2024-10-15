@@ -17,7 +17,7 @@ export class CidadeComponent implements OnInit{
   ngOnInit(): void {
    this.loadCidades();
   }
-  
+
   loadCidades(){
     this.servise.getCidades().subscribe({
       next: data => this.cidades = data
@@ -26,7 +26,7 @@ export class CidadeComponent implements OnInit{
 
   delete(cidades: Cidade){
     this.servise.delete(cidades).subscribe({
-       next:() => this.loadCidades
+       next:() => this.loadCidades()
    })
   }
 

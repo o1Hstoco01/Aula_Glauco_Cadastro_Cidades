@@ -15,6 +15,10 @@ export class CidadeService {
     return this.http.get<Cidade []>('http://localhost:3000/cidades')
   }
 
+  getCidadeById(id:number): Observable<Cidade>{
+    return this.http.get<Cidade>('http://localhost:4200/cidade/' + id);
+  }
+
   delete(cidade: Cidade): Observable<void>{
     return this.http.delete<void>('http://localhost:3000/cidades/' + cidade.id)
   }

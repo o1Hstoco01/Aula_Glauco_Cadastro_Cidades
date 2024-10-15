@@ -1,3 +1,28 @@
 {
-  "cidades": []
+  "cidades": [
+    {
+      "id": 1,
+      "cep": 15000,
+      "nome": "Cidade",
+      "estado": "SP",
+      "ddd": 185030,
+      "populacao": 30000
+    },
+    {
+      "id": 2,
+      "cep": 15000,
+      "nome": "Cidade",
+      "estado": "SP",
+      "ddd": 185030,
+      "populacao": 30000
+    },
+    {
+      "id": 3,
+      "cep": 15000,
+      "nome": "Cidade",
+      "estado": "SP",
+      "ddd": 185030,
+      "populacao": 30000
+    }
+  ]
 }
