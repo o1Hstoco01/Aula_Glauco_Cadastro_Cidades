@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CidadeService } from '../cidade.service';
 import { Cidade } from '../cidade';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,24 +13,27 @@ import { Cidade } from '../cidade';
 export class CidadeComponent implements OnInit{
   cidades: Cidade  [] = [];
 
-  constructor(private servise: CidadeService){}
+  constructor(private service: CidadeService, private router: Router){}
 
   ngOnInit(): void {
    this.loadCidades();
   }
 
   loadCidades(){
-    this.servise.getCidades().subscribe({
+    this.service.getCidades().subscribe({
       next: data => this.cidades = data
     })
   }
 
   delete(cidades: Cidade){
-    this.servise.delete(cidades).subscribe({
+    this.service.delete(cidades).subscribe({
        next:() => this.loadCidades()
    })
   }
 
+  create(){
+    this.router.navigate(['cidade'])
+  }
 
 
 }

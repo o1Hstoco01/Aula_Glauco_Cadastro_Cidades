@@ -1,26 +1,28 @@
 <div class="container">
-  <h1>Cadastro de Cidade</h1>
-  <form>
+  <form [formGroup]="formGroupCidade">
+    <h1>Cadastro de  Cidade</h1>
       <div class="mb-3">
           <label for="name" class="form-label">Nome: </label>
-          <input type="text" class="form-control" id="nome" placeholder="Digite o nome: ">
+          <input formControlName="nome" class="form-control" id="nome" placeholder="Digite o nome: ">
         </div>
         <div class="mb-3">
           <label for="price" class="form-label">Cep: </label>
-          <input type="text" class="form-control" id="cep" placeholder="Digite o cep: ">
+          <input formControlName="cep" class="form-control" id="cep" placeholder="Digite o cep: ">
         </div>
         <div class="mb-3">
           <label for="category" class="form-label">Estado: </label>
-          <input type="text" class="form-control" id="estado" placeholder="Digite o estado: ">
+          <input formControlName="estado" class="form-control" id="estado" placeholder="Digite o estado: ">
         </div>
         <div class="mb-3">
           <label for="category" class="form-label">Ddd: </label>
-          <input type="text" class="form-control" id="ddd" placeholder="Digite o ddd: ">
+          <input formControlName="ddd" class="form-control" id="ddd" placeholder="Digite o ddd: ">
         </div>
         <div class="mb-3">
           <label for="category" class="form-label">População: </label>
-          <input type="text" class="form-control" id="populacao" placeholder="Digite a populaão: ">
+          <input formControlName="populacao" class="form-control" id="populacao" placeholder="Digite a populaão: ">
         </div>
-        <button type="button" class="btn btn-primary">Salvar</button>
+        <button *ngIf="!isEditing" class="btn btn-primary" (click)="update()">Salvar</button>
+
+        <button *ngIf="!isEditing" class="btn btn-primary" (click)="save()">Criar</button>
   </form>
 </div>

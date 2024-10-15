@@ -3,7 +3,7 @@
     {
       "id": 1,
       "cep": 15000,
-      "nome": "Cidade",
+      "nome": "nOME",
       "estado": "SP",
       "ddd": 185030,
       "populacao": 30000
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "cep": 15000,
-      "nome": "Cidade",
+      "nome": "teste",
       "estado": "SP",
       "ddd": 185030,
       "populacao": 30000
@@ -23,6 +23,14 @@
       "estado": "SP",
       "ddd": 185030,
       "populacao": 30000
+    },
+    {
+      "id": 4,
+      "cep": "23123",
+      "nome": "CIdade",
+      "estado": "sp",
+      "ddd": "31231",
+      "populacao": "1231231"
     }
   ]
 }

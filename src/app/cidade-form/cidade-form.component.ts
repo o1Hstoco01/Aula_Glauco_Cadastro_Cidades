@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CidadeService } from '../cidade.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cidade-form',
@@ -8,18 +9,44 @@ import { CidadeService } from '../cidade.service';
   styleUrl: './cidade-form.component.css'
 })
 export class CidadeFormComponent implements OnInit{
-  constructor(private router: Router, private activeRoute: ActivatedRoute, private service: CidadeService){
+  formGroupCidade: FormGroup;
+  isEditing: boolean = false;
 
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private service: CidadeService, private FormBuilder: FormBuilder){
+    this.formGroupCidade = FormBuilder.group({
+      id: [''],
+      cep: [''],
+      nome: [''],
+      estado: [''],
+      ddd: [''],
+      populacao: [''],
+    });
   }
 
   ngOnInit() {
     const id = Number(this.activeRoute.snapshot.paramMap.get("id"));
-    this.loadCidades(id);
+    if(id != 0){
+      this.isEditing=true;
+      this.loadCidades(id);
+    }
   }
+
   loadCidades(id: number){
     this.service.getCidadeById(id).subscribe({
-    next: data=> alert(data.nome)
-  })
+    next: data=> this.formGroupCidade.setValue(data)
+  });
+  }
+
+  update(){
+    this.service.update(this.formGroupCidade.value).subscribe({
+      next:() => this.router.navigate(['cidades'])
+    })
+  }
+
+  save(){
+    this.service.save(this.formGroupCidade.value).subscribe({
+      next:()=> this.router.navigate(['cidade'])
+    })
   }
 
 }
