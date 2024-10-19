@@ -19,9 +19,9 @@
         </div>
         <div class="mb-3">
           <label for="category" class="form-label">População: </label>
-          <input formControlName="populacao" class="form-control" id="populacao" placeholder="Digite a populaão: ">
+          <input formControlName="populacao" class="form-control" id="populacao" placeholder="Digite a população: ">
         </div>
-        <button *ngIf="!isEditing" class="btn btn-primary" (click)="update()">Salvar</button>
+        <button *ngIf="isEditing" class="btn btn-primary" (click)="update()">Salvar</button>
 
         <button *ngIf="!isEditing" class="btn btn-primary" (click)="save()">Criar</button>
   </form>

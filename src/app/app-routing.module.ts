@@ -5,9 +5,9 @@ import { CidadeFormComponent } from './cidade-form/cidade-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/cidade', pathMatch: 'full'},
-  {path: 'cidades', component: CidadeComponent},
+  {path: 'cidade', component: CidadeComponent},
   {path: 'cidade/:id', component: CidadeFormComponent},
-  {path: 'cidade', component: CidadeFormComponent}
+  {path: 'cidades', component: CidadeFormComponent}
 ];
 
 @NgModule({

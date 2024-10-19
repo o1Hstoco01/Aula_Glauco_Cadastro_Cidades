@@ -39,7 +39,7 @@ export class CidadeFormComponent implements OnInit{
 
   update(){
     this.service.update(this.formGroupCidade.value).subscribe({
-      next:() => this.router.navigate(['cidades'])
+      next:() => this.router.navigate(['cidade'])
     })
   }
 

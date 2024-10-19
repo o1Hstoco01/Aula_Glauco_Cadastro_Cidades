@@ -8,12 +8,14 @@ import { CidadeComponent } from './cidade/cidade.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CidadeFormComponent } from './cidade-form/cidade-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CidadeComponent,
-    CidadeFormComponent
+    CidadeFormComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

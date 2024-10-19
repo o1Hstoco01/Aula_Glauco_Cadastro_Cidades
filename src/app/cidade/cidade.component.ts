@@ -32,7 +32,7 @@ export class CidadeComponent implements OnInit{
   }
 
   create(){
-    this.router.navigate(['cidade'])
+    this.router.navigate(['cidades'])
   }
 
 
